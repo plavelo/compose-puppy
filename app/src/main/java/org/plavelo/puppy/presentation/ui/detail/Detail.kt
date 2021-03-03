@@ -15,6 +15,9 @@
  */
 package org.plavelo.puppy.presentation.ui.detail
 
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
@@ -28,8 +31,10 @@ import androidx.compose.material.icons.rounded.ArrowBack
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
 import org.plavelo.puppy.R
 import org.plavelo.puppy.domain.PuppyId
 import org.plavelo.puppy.presentation.PuppyViewModel
@@ -60,9 +65,26 @@ fun Detail(viewModel: PuppyViewModel, id: PuppyId, upPress: () -> Unit) {
             color = MaterialTheme.colors.background,
             modifier = Modifier.padding(innerPadding)
         ) {
-            Text(
-                text = "dummy text",
-            )
+            if (puppy != null) {
+                Column(
+                    modifier = Modifier.fillMaxWidth(),
+                ) {
+                    Box(
+                        contentAlignment = Alignment.Center,
+                    ) {
+                        Text(
+                            text = puppy?.image ?: "",
+                            style = MaterialTheme.typography.h3,
+                            modifier = Modifier.padding(start = 8.dp)
+                        )
+                    }
+                    Text(
+                        text = "Name: ${puppy?.name}",
+                        modifier = Modifier.padding(start = 16.dp, top = 16.dp),
+                        style = MaterialTheme.typography.h5,
+                    )
+                }
+            }
         }
     }
 }

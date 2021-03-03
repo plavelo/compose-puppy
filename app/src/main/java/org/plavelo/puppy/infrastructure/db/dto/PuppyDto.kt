@@ -24,6 +24,7 @@ import org.plavelo.puppy.domain.PuppyId
 data class PuppyDto(
     @PrimaryKey val id: String,
     val name: String,
+    val image: String,
     val favorite: Boolean,
 )
 
@@ -32,11 +33,13 @@ fun List<PuppyDto>.toModels(): List<Puppy> = map(PuppyDto::toModel)
 fun PuppyDto.toModel(): Puppy = Puppy(
     PuppyId(id),
     name,
+    image,
     favorite,
 )
 
 fun Puppy.toDto(): PuppyDto = PuppyDto(
     id.id,
     name,
+    image,
     favorite,
 )

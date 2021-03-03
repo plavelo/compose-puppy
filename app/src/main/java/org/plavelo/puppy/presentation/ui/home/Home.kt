@@ -16,6 +16,9 @@
 package org.plavelo.puppy.presentation.ui.home
 
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -32,6 +35,7 @@ import androidx.compose.material.icons.filled.Add
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
@@ -85,14 +89,28 @@ fun ListItems(puppies: List<Puppy>, onSelect: (PuppyId) -> Unit, modifier: Modif
 
 @Composable
 fun ListItem(puppy: Puppy, onSelect: (PuppyId) -> Unit) {
-    Text(
-        text = "Hello ${puppy.name}!",
+    Row(
         modifier = Modifier
             .clickable(
                 onClick = {
                     onSelect(puppy.id)
                 }
             )
-            .padding(24.dp)
-    )
+            .height(72.dp)
+    ) {
+        Box(
+            contentAlignment = Alignment.Center,
+        ) {
+            Text(
+                text = puppy.image,
+                style = MaterialTheme.typography.h3,
+                modifier = Modifier.padding(start = 8.dp)
+            )
+        }
+        Text(
+            text = puppy.name,
+            modifier = Modifier.padding(start = 16.dp, top = 16.dp),
+            style = MaterialTheme.typography.h5,
+        )
+    }
 }
