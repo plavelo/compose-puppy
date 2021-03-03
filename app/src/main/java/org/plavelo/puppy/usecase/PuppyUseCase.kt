@@ -30,19 +30,19 @@ class PuppyUseCase @Inject constructor(
 
     suspend fun addRandomPuppy() {
         val puppies = listOf(
-            "Abby",
-            "Benny",
-            "Cinnamon",
-            "Davy",
-            "Elsa",
-            "Frankie",
-            "Ginger",
-            "Harvey",
-            "Ivy",
-            "Jesse",
-            "Kayla",
-            "Linus",
+            Puppy(PuppyId.generate(), "Abby", "\uD83D\uDC36", false),
+            Puppy(PuppyId.generate(), "Benny", "\uD83D\uDC15", false),
+            Puppy(PuppyId.generate(), "Cinnamon", "\uD83D\uDC3A", false),
+            Puppy(PuppyId.generate(), "Davy", "\uD83E\uDD8A", false),
+            Puppy(PuppyId.generate(), "Elsa", "\uD83E\uDD9D", false),
+            Puppy(PuppyId.generate(), "Frankie", "\uD83D\uDC31", false),
+            Puppy(PuppyId.generate(), "Ginger", "\uD83D\uDC08", false),
+            Puppy(PuppyId.generate(), "Harvey", "\uD83E\uDD81", false),
+            Puppy(PuppyId.generate(), "Ivy", "\uD83D\uDC2F", false),
+            Puppy(PuppyId.generate(), "Jesse", "\uD83D\uDC37", false),
+            Puppy(PuppyId.generate(), "Kayla", "\uD83D\uDC35", false),
+            Puppy(PuppyId.generate(), "Linus", "\uD83D\uDC27", false),
         )
-        puppyRepository.add(Puppy(PuppyId.generate(), puppies.random(), false))
+        puppyRepository.add(puppies.random())
     }
 }

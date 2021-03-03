@@ -15,4 +15,9 @@
  */
 package org.plavelo.puppy.domain
 
-data class Puppy(val id: PuppyId, val name: String, val favorite: Boolean)
+data class Puppy(
+    val id: PuppyId,
+    val name: String,
+    val image: String,
+    val favorite: Boolean,
+)
