@@ -1,18 +1,19 @@
-# Put title of your app here
+# Puppy adoption app
 
 <!--- Replace <OWNER> with your Github Username and <REPOSITORY> with the name of your repository. -->
 <!--- You can find both of these in the url bar when you open your repository in github. -->
-![Workflow result](https://github.com/<OWNER>/<REPOSITORY>/workflows/Check/badge.svg)
+![Workflow result](https://github.com/plavelo/compose-puppy/workflows/Check/badge.svg)
 
 
 ## :scroll: Description
 <!--- Describe your app in one or two sentences -->
-
+This repository is for the first week of the [#AndroidDevChallenge](https://android-developers.googleblog.com/2021/02/android-dev-challenge-lift-off-with.html).
 
 ## :bulb: Motivation and Context
 <!--- Optionally point readers to interesting parts of your submission. -->
 <!--- What are you especially proud of? -->
-
+Let’s start the #AndroidDevChallenge with a bang bark: build a puppy adoption app!
+The app should contain an overview screen that displays a list of puppies, and a detail screen showing each puppy's details.
 
 ## :camera_flash: Screenshots
 <!-- You can add more screenshots here if you like -->
